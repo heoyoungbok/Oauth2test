@@ -16,14 +16,25 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100, unique = true)
+    private String email;
+    @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(nullable = false)
-    private String email;
+    @Column(nullable = false, length = 100, unique = true)
+    private String nickName;
+
+    @Column(length = 11)
+    private String phoneNumber;
 
     @Column
     private String picture;
+
+    @Column(length = 1)
+    private String gender;
+
+    @Column(length = 8)
+    private String birthDate;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = true)
