@@ -20,9 +20,9 @@ public class HomeController {
 
     private final UserService userService;
     private final HttpSession httpSession;
-    private static final String authorizationRequestBaseUri = "oauth2/authorization";
-    Map<String, String> oauth2AuthenticationUrls = new HashMap<>();
-    private final ClientRegistrationRepository clientRegistrationRepository;
+//    private static final String authorizationRequestBaseUri = "oauth2/authorization";
+//    Map<String, String> oauth2AuthenticationUrls = new HashMap<>();
+//    private final ClientRegistrationRepository clientRegistrationRepository;
 
     @GetMapping("/")
     public String index(Model model) {
@@ -34,7 +34,7 @@ public class HomeController {
             model.addAttribute("userName", user.getName());
         }
 
-        return "index";
+        return "login";
     }
 //    @GetMapping("/login")
 //    public String getLoginPage(Model model) throws Exception {
